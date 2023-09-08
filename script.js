@@ -5,6 +5,19 @@ const orderFormDiv = document.querySelector(".order-form");
 const orderSummaryDiv = document.querySelector(".order-summary");
 const orderSummaryDetailsDiv = document.querySelector("#order-summary-details");
 const orderForm = document.getElementById("order-form");
+const citySelect = document.getElementById("city");
+const cityOtherInput = document.getElementById("city-other");
+
+// Додаємо обробник події для вибору міста
+citySelect.addEventListener("change", () => {
+  if (citySelect.value === "Інше місто") {
+    cityOtherInput.style.display = "block";
+    cityOtherInput.setAttribute("required", "required");
+  } else {
+    cityOtherInput.style.display = "none";
+    cityOtherInput.removeAttribute("required");
+  }
+});
 
 const categoriesData = {
   Ноутбуки: [
