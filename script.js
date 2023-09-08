@@ -8,7 +8,6 @@ const orderForm = document.getElementById("order-form");
 const citySelect = document.getElementById("city");
 const cityOtherInput = document.getElementById("city-other");
 
-// Додаємо обробник події для вибору міста
 citySelect.addEventListener("change", () => {
   if (citySelect.value === "Інше місто") {
     cityOtherInput.style.display = "block";
@@ -135,7 +134,7 @@ orderForm.addEventListener("submit", function (e) {
   const productName = document.querySelector(
     'input[name="product-name"]'
   ).value;
-
+  const otherCity = document.getElementById("city-other").value;
   if (
     !customerName ||
     !city ||
@@ -153,7 +152,7 @@ orderForm.addEventListener("submit", function (e) {
   const orderSummary = `
     <p><strong>Продукт:</strong> ${productName}</p>
     <p><strong>ПІБ покупця:</strong> ${customerName}</p>
-    <p><strong>Місто:</strong> ${city}</p>
+    <p><strong>Місто:</strong> ${city === "Інше місто" ? otherCity : city}</p>
     <p><strong>Склад Нової пошти:</strong> ${deliveryPoint}</p>
     <p><strong>Спосіб оплати:</strong> ${paymentMethod}</p>
     <p><strong>Кількість:</strong> ${quantity}</p>

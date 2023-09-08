@@ -49,10 +49,11 @@
 
           <label for="delivery-point">Склад Нової пошти:</label>
           <input
-            type="text"
-            placeholder="Введіть номер складу Нової Пошти"
+            type="number"
+            placeholder="Введіть номер складу"
             id="delivery-point"
             required
+            min="1"
           /><br />
 
           <label for="payment-method">Спосіб оплати:</label>
@@ -79,6 +80,7 @@
             placeholder="Введіть кількість одиниць"
             id="quantity"
             required
+            min="1"
           /><br />
 
           <label for="comment">Коментар до замовлення:</label>
